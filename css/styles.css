@@ -196,12 +196,10 @@
     position: absolute;
     text-align: left;
     z-index: 2;
-    border: 2px solid white;
   }
 
   .nav-links ul a {
     display: block !important;
-    border: 2px solid white;
   }
 
   .nav-links .btn {
