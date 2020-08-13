@@ -9,7 +9,7 @@
 
 .hero {
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)), url(../images/bg2.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)), url(../images/bg2.jpg);
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
@@ -85,7 +85,8 @@
 .banner-title h1 {
   font-size: 82px;
   color: #fff;
-  font-family: 'Ceviche One', cursive;
+  font-family: 'Play', serif;
+
 }
 
 .banner-title h1::after{
@@ -109,7 +110,8 @@
 
 .banner-title h1 span {
   color: #228B22;
-  font-family: 'Ceviche One', cursive;
+  font-family: 'Play', serif;
+
 }
 
 .vertical-bar {
@@ -214,3 +216,67 @@
     top: 10px;
   }
 }
+
+/* Team page styling */
+
+.hero-team {
+  height: 40vh;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.6)), url(../images/bg4.jpg);
+  background-size: cover;
+  background-position: bottom;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.team-banner-title h1 { 
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;  
+  font-family: 'Play', serif;
+}
+
+.team-section h2 {
+  color: #228B22;
+  text-align: center;
+  margin-top: 1rem;
+  font-family: 'Play', serif;
+}
+
+.goalie {
+  margin-top: 10px;
+  float: left;
+  margin-left: 5%;
+  width: 40%;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.goalie img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.team-player-detail h3 {
+  font-family: 'Zilla Slab', serif;
+}
+
+.team-player-detail h4 {
+  margin-top: 5px;
+  font-family: 'Play', serif;
+  margin-bottom: 10px;
+}
+
+/* screen responsive styles less than 650px - mobile phones */
+@media screen and (max-width: 650px) {
+  .goalie {
+    width: 100%;
+    display: block;
+  }
+}
+
