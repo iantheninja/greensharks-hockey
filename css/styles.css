@@ -71,6 +71,7 @@
   background: #228B22;
   font-weight: bold;
   font-size: 16px;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -258,8 +259,14 @@
   max-height: 100%;
   width: 300px;
   height: 300px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+}
+
+.goalie img:hover {
+  border: 6px solid #228B22;
+  transition: .3s ease-in-out;
 }
 
 .team-player-detail h3 {
