@@ -349,6 +349,34 @@ body {
   cursor: pointer;
 }
 
+.tab .effect img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  opacity: 0.7;
+}
+
+.tab .effect .tab-text {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tab-text p {
+  color: #fff;
+  margin: 0;
+  font-size: 1rem
+}
+
+
 
 
 /* End of team section styling for team section */
@@ -362,3 +390,86 @@ body {
   }
 }
 
+@media (max-width:575px) {
+
+  .col-xs-6,
+  .col-sm-3,
+  .column-xs-1,
+  .column-xs-10,
+  .column-xs-11,
+  .column-xs-12,
+  .column-xs-2,
+  .column-xs-3,
+  .column-xs-4,
+  .column-xs-5,
+  .column-xs-7,
+  .column-xs-8,
+  .column-xs-9 {
+    float: left;
+    padding: 15px
+  }
+
+  .column-xs-1 {
+    width: 8.333333333333333%
+  }
+
+  .column-xs-2 {
+    width: 16.66666666666667%
+  }
+
+  .column-xs-3 {
+    width: 25%
+  }
+
+  .column-xs-4 {
+    width: 33.33333333333333%
+  }
+
+  .column-xs-5 {
+    width: 41.66666666666667%
+  }
+
+  .column-xs-6 {
+    width: 50%;
+    float: left;
+    padding: 15px
+  }
+
+  .column-xs-7 {
+    width: 58.33333333333333%
+  }
+
+  .column-xs-8 {
+    width: 66.66666666666667%
+  }
+
+  .column-xs-9 {
+    width: 75%
+  }
+
+  .column-xs-10 {
+    width: 83.33333333333333%
+  }
+
+  .column-xs-11 {
+    width: 91.66666666666667%
+  }
+
+  .column-xs-12 {
+    width: 100%
+  }
+
+  .hide-xs {
+    display: none
+  }
+
+  .effectTab-header .title::before {
+    width: 125%;
+    left: 15%
+  }
+
+  .tab-container {
+    padding-top: 25px;
+    padding-bottom: 25px
+  }
+}
