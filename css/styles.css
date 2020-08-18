@@ -236,48 +236,123 @@
   font-family: 'Play', serif;
 }
 
-.team-section h2 {
+.effectTab-header .caption,
+.effectTab-header .title {
+  font-weight: 700;
+  padding-bottom: 20px;
+  position: relative;
+  display: inline-block;
   color: #228B22;
+  margin: 0 0 20px;
   text-align: center;
-  margin-top: 1rem;
-  font-family: 'Play', serif;
+  text-transform: uppercase;
 }
 
-.goalie {
-  margin-top: 10px;
+.effectTab-header .title {
+  font-size: 36px;
+  font-family: 'Play', serif ;
+}
+
+column-1,
+.column-10,
+.column-11,
+.column-12,
+.column-2,
+.column-3,
+.column-4,
+.column-5,
+.column-6,
+.column-7,
+.column-8,
+.column-9 {
   float: left;
-  margin-left: 5%;
-  width: 40%;
-  text-align: center;
-  display: block;
+  padding: 5px
+}
+
+.effectTab-header .title::after,
+.effectTab-header .title::before {
+  position: absolute;
+  background: #228B22;
+  content: ""
+}
+
+.effectTab-header .title::before {
+  left: 0;
+  width: 156%;
+  height: 3px;
+  margin-left: -28%;
+  bottom: -1.5px;
+}
+
+.effectTab-header .title::after {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  bottom: -26px;
+  margin: 0 0 0 -10px;
+  -webkit-clip-path: polygon(75% 0, 75% 69%, 41% 93%, 0 68%, 0 0);
+  clip-path: polygon(75% 0, 75% 69%, 41% 93%, 0 68%, 0 0);
+}
+
+body {
+  background-color: #f5f5f5;
+  filter: alpha(opacity=10);
+  background-attachment: fixed;
+}
+
+.column-1 {
+  width: 8.333333333333333%
+}
+
+.column-9 {
+  width: 75%
+}
+
+.column-12,
+.wrapper-full {
+  width: 100%
+}
+
+.custom-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.box-tab {
+  margin: 10px 0;
+}
+
+.effect {
+  box-shadow:  0 0 15px 5px rgba(0, 0, 0, .07);
+  background-color: #fff;
+  border: 5px solid #f5f5f5;
+}
+
+.tab-container {
+  padding: 50px 0;
+}
+
+.tab .effect {
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-height: 500px;
+  max-width: 350px;
+  background: #000;
+  text-align: center;
+  cursor: pointer;
 }
 
-.goalie img {
-  max-width: 100%;
-  max-height: 100%;
-  width: 300px;
-  height: 300px;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  box-sizing: border-box;
-}
 
-.goalie img:hover {
-  border: 6px solid #228B22;
-  transition: .3s ease-in-out;
-}
 
-.team-player-detail h3 {
-  font-family: 'Zilla Slab', serif;
-}
+/* End of team section styling for team section */
 
-.team-player-detail h4 {
-  margin-top: 5px;
-  font-family: 'Play', serif;
-  margin-bottom: 10px;
-}
 
 /* screen responsive styles less than 650px - mobile phones */
 @media screen and (max-width: 650px) {
