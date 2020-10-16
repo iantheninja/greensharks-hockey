@@ -1,8 +1,47 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Zilla+Slab:wght@300;400;700&display=swap');
+
+
+/* variables */
+:root {
+  --header-height: 3rem;
+
+  --first-color: #228B22;
+  --second-color: #ffff00;
+  --dark-color: #0e1026;
+  --white-color: #fbfbfb;
+
+  /* Fonts and typograpy */
+  --body-font: 'Play', serif;
+  --secondary-font: 'Zilla Slab', serif;
+  --nav-name-font-size: 1.5rem;
+  --normal-font-size: 0.938rem;
+
+  /* z-index */
+  --z-fixed: 100;
+}
+
+
+@media screen and (min-width: 768px) {
+  :root {
+    --nav-name-font-size: 1rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/* base styling */
+
+*, ::before, ::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: sans-serif;
-  /* border: 1px solid black; */
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--secondary-font);
+  font-size: var(--normal-font-size);
+  font-weight: 500;
 }
 
 /* hero section */
@@ -16,78 +55,122 @@
   position: relative;
 }
 
-.nav-bar {
-  display: flex;
-  padding: 40px 120px;
-}
-
-.nav-logo img {
-  width: 130px;
-
-}
-
-.nav-links {
-  flex: 1;
-}
-
-.nav-links ul {
-  margin-left: 100px;
-  display: inline;
-  font-family: 'Play', sans-serif;
-
-}
-
-.nav-links ul li {
+ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  display: inline-block;
-  padding: 8px 25px;
 }
 
-.nav-links ul a {
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none ;
-  font-family: 'Play', sans-serif;
-  text-transform: uppercase;
+a {
+  text-decoration: none;
 }
 
-.nav-links ul li::after {
-  content: '';
-  width: 0;
-  height: 2px;
-  background: yellow;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
-.nav-links ul li:hover::after {
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: var(--header-height);
+  padding: 0 1rem;
+  background-color: #fff;
+  z-index: var(--z-fixed);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-logo {
+  color: var(--dark-color);
+}
+
+.header-toggle {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--first-color);
+    width: 80%;
+    height: 100vh;
+    padding: 2rem 0;
+    z-index: var(--z-fixed);
+    transition: .5s;
+    overflow-y: auto;
+  }
+
+  .nav-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .nav-img {
+    display: flex;
+    justify-content: center;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .nav-img img {
+    width: 95px;
+  }
+
+  .nav-name {
+    display: block;
+    font-size: var(--nav-name-font-size);
+    font-family: var(--body-font);
+    color: var(--white-color);
+  }
+
+  .nav-item {
+    /*  NILIKUWA NIMEFIKA HAPA */
+  }
 }
 
 .btn {
   padding: 10px 20px;
   border: 0;
-  background: #228B22;
+  background: var(--white-color);
   font-weight: bold;
   font-size: 16px;
-  color: #fff;
+  color: var(--first-color);
+  border-radius: 5%;
   cursor: pointer;
-}
-
-.nav-links .btn {
-  float: right;
 }
 
 .banner-title {
   margin: 80px 130px;
+  display: none;
 }
 
 .banner-title h1 {
   font-size: 82px;
   color: #fff;
-  font-family: 'Play', serif;
-
+  font-family: var(--body-font);
 }
 
 .banner-title h1::after{
@@ -101,7 +184,7 @@
 }
 
 .banner-title p {
-  font-family: 'Zilla Slab', serif;
+  font-family: var(--secondary-font);
   font-size: 20px;
   margin-top: 10px;
   line-height: 2rem;
@@ -115,108 +198,7 @@
 
 }
 
-.vertical-bar {
-  height: 100%;
-  background: #000;
-  top: 0;
-  left: 0;
-  position: absolute;
-}
 
-.search-icon {
-  height: 60%;
-  width: 80px;
-}
-
-.search-icon .fa {
-  margin: 45px 23px;
-  display: block;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.social-icons {
-  height: 35%;
-  width: 80px;
-  background: #228B22;
-  text-align: center;
-  padding-top: 27%;
-  bottom: 0;
-  position: absolute;
-}
-
-.social-icons .fa {
-  margin: 15px 23px;
-  display: block;
-  padding: 8px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.nav-bar .fa {
-  display: none;
-}
-
-@media (max-width: 700px) {
-  .vertical-bar {
-    display: none;
-  }
-
-  .banner-title {
-    margin: 80px 40px;
-  }
-
-  .banner-title h1 {
-    font-size: 50px;
-  }
-
-  .nav-bar {
-    padding: 10px 30px;
-  }
-
-  .fa-bars {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-  }
-  
-  .nav-bar .fa {
-    display: block;
-    color: #fff;
-    margin: 10px 25px;
-    font-size: 22px;
-    cursor: pointer;
-  }
-
-  .nav-links {
-    height: 100vh;
-    width: 200px;
-    background: #000;
-    top: 0;
-    right: 0;
-    position: absolute;
-    text-align: left;
-    z-index: 2;
-  }
-
-  .nav-links ul a {
-    display: block !important;
-  }
-
-  .nav-links .btn {
-    float: none;
-    margin-left: 25px;
-    margin-top: 10px;
-  }
-
-  .fa-close {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-  }
-}
 
 /* Team page styling */
 
@@ -235,3 +217,5 @@
   font-size: 3rem;  
   font-family: 'Play', serif;
 }
+
+/* new styles added to project */
